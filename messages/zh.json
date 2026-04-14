@@ -1,0 +1,82 @@
+{
+  "zh": {
+    "common": {
+      "appName": "AI 圖片生成器",
+      "loading": "載入中...",
+      "error": "錯誤",
+      "success": "成功",
+      "cancel": "取消",
+      "confirm": "確認",
+      "save": "保存",
+      "delete": "刪除",
+      "edit": "編輯",
+      "close": "關閉"
+    },
+    "nav": {
+      "home": "首頁",
+      "generate": "生成",
+      "history": "歷史記錄",
+      "admin": "管理後台",
+      "signIn": "登入",
+      "signOut": "登出"
+    },
+    "home": {
+      "title": "AI 圖片生成器",
+      "subtitle": "使用 AI 創建精美圖片",
+      "getStarted": "開始使用",
+      "features": {
+        "title": "功能特色",
+        "multiModel": "多模型支持",
+        "multiModelDesc": "從 10 個不同的 AI 模型中選擇",
+        "fast": "快速生成",
+        "fastDesc": "幾秒鐘內生成圖片",
+        "highQuality": "高質量",
+        "highQualityDesc": "專業級圖片質量"
+      }
+    },
+    "generate": {
+      "title": "生成圖片",
+      "model": "模型",
+      "selectModel": "選擇模型",
+      "prompt": "提示詞",
+      "promptPlaceholder": "描述你想生成的圖片...",
+      "size": "尺寸",
+      "generate": "生成",
+      "generating": "生成中...",
+      "download": "下載",
+      "generatedImage": "生成的圖片"
+    },
+    "history": {
+      "title": "生成歷史",
+      "noHistory": "暫無生成記錄",
+      "model": "模型",
+      "prompt": "提示詞",
+      "createdAt": "創建時間",
+      "viewImage": "查看圖片"
+    },
+    "admin": {
+      "title": "管理後台",
+      "stats": {
+        "title": "統計數據",
+        "totalGenerations": "總生成數",
+        "totalUsers": "總用戶數",
+        "totalApiCalls": "總 API 調用數"
+      },
+      "apiKeys": {
+        "title": "API Key 管理",
+        "addKey": "添加 API Key",
+        "name": "名稱",
+        "key": "密鑰",
+        "weight": "權重",
+        "usageCount": "使用次數",
+        "status": "狀態",
+        "active": "啟用",
+        "inactive": "停用",
+        "actions": "操作",
+        "edit": "編輯",
+        "delete": "刪除",
+        "confirmDelete": "確定要刪除這個 API Key 嗎？"
+      }
+    }
+  }
+}

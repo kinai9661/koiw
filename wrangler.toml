@@ -1,0 +1,9 @@
+name = "ai-image-generator"
+compatibility_date = "2024-01-01"
+
+[build]
+command = "npm run build"
+publish = ".next"
+
+[env.production]
+NODE_VERSION = "18"

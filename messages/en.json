@@ -1,0 +1,82 @@
+{
+  "en": {
+    "common": {
+      "appName": "AI Image Generator",
+      "loading": "Loading...",
+      "error": "Error",
+      "success": "Success",
+      "cancel": "Cancel",
+      "confirm": "Confirm",
+      "save": "Save",
+      "delete": "Delete",
+      "edit": "Edit",
+      "close": "Close"
+    },
+    "nav": {
+      "home": "Home",
+      "generate": "Generate",
+      "history": "History",
+      "admin": "Admin",
+      "signIn": "Sign In",
+      "signOut": "Sign Out"
+    },
+    "home": {
+      "title": "AI Image Generator",
+      "subtitle": "Create stunning images with AI",
+      "getStarted": "Get Started",
+      "features": {
+        "title": "Features",
+        "multiModel": "Multiple Models",
+        "multiModelDesc": "Choose from 10 different AI models",
+        "fast": "Fast Generation",
+        "fastDesc": "Generate images in seconds",
+        "highQuality": "High Quality",
+        "highQualityDesc": "Professional quality images"
+      }
+    },
+    "generate": {
+      "title": "Generate Image",
+      "model": "Model",
+      "selectModel": "Select a model",
+      "prompt": "Prompt",
+      "promptPlaceholder": "Describe the image you want to generate...",
+      "size": "Size",
+      "generate": "Generate",
+      "generating": "Generating...",
+      "download": "Download",
+      "generatedImage": "Generated Image"
+    },
+    "history": {
+      "title": "Generation History",
+      "noHistory": "No generation history yet",
+      "model": "Model",
+      "prompt": "Prompt",
+      "createdAt": "Created At",
+      "viewImage": "View Image"
+    },
+    "admin": {
+      "title": "Admin Dashboard",
+      "stats": {
+        "title": "Statistics",
+        "totalGenerations": "Total Generations",
+        "totalUsers": "Total Users",
+        "totalApiCalls": "Total API Calls"
+      },
+      "apiKeys": {
+        "title": "API Keys Management",
+        "addKey": "Add API Key",
+        "name": "Name",
+        "key": "Key",
+        "weight": "Weight",
+        "usageCount": "Usage Count",
+        "status": "Status",
+        "active": "Active",
+        "inactive": "Inactive",
+        "actions": "Actions",
+        "edit": "Edit",
+        "delete": "Delete",
+        "confirmDelete": "Are you sure you want to delete this API key?"
+      }
+    }
+  }
+}
