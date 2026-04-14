@@ -1,9 +1,14 @@
 import { createClient } from '@supabase/supabase-js';
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
+function getSupabaseClient() {
+  if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
+    throw new Error('Supabase environment variables are not configured');
+  }
+  return createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL,
+    process.env.SUPABASE_SERVICE_ROLE_KEY
+  );
+}
 
 export interface ApiKey {
   id: string;
@@ -17,6 +22,7 @@ export interface ApiKey {
 
 // 輪詢策略：選擇使用次數最少的 API Key
 export async function getAvailableApiKey(): Promise<ApiKey> {
+  const supabase = getSupabaseClient();
   const { data: keys, error } = await supabase
     .from('api_keys')
     .select('*')
@@ -33,6 +39,7 @@ export async function getAvailableApiKey(): Promise<ApiKey> {
 
 // 權重隨機策略
 export async function getWeightedRandomApiKey(): Promise<ApiKey> {
+  const supabase = getSupabaseClient();
   const { data: keys, error } = await supabase
     .from('api_keys')
     .select('*')
@@ -57,6 +64,7 @@ export async function getWeightedRandomApiKey(): Promise<ApiKey> {
 
 // 更新 API Key 使用次數
 export async function incrementApiKeyUsage(keyId: string): Promise<void> {
+  const supabase = getSupabaseClient();
   const { error } = await supabase.rpc('increment_api_key_usage', {
     key_id: keyId,
   });
