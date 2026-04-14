@@ -1,12 +1,18 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
+function getSupabaseClient() {
+  if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
+    throw new Error('Supabase environment variables are not configured');
+  }
+  return createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL,
+    process.env.SUPABASE_SERVICE_ROLE_KEY
+  );
+}
 
 async function checkAdmin(userId: string): Promise<boolean> {
+  const supabase = getSupabaseClient();
   const { data } = await supabase
     .from('user_profiles')
     .select('role')
@@ -18,6 +24,7 @@ async function checkAdmin(userId: string): Promise<boolean> {
 
 export async function GET(req: NextRequest) {
   try {
+    const supabase = getSupabaseClient();
     const supabaseClient = await (await import('@/lib/supabase/server')).createClient();
     const { data: { user }, error: authError } = await supabaseClient.auth.getUser();
     
@@ -40,6 +47,7 @@ export async function GET(req: NextRequest) {
 
 export async function POST(req: NextRequest) {
   try {
+    const supabase = getSupabaseClient();
     const supabaseClient = await (await import('@/lib/supabase/server')).createClient();
     const { data: { user }, error: authError } = await supabaseClient.auth.getUser();
     
@@ -72,6 +80,7 @@ export async function POST(req: NextRequest) {
 
 export async function PATCH(req: NextRequest) {
   try {
+    const supabase = getSupabaseClient();
     const supabaseClient = await (await import('@/lib/supabase/server')).createClient();
     const { data: { user }, error: authError } = await supabaseClient.auth.getUser();
     
@@ -107,6 +116,7 @@ export async function PATCH(req: NextRequest) {
 
 export async function DELETE(req: NextRequest) {
   try {
+    const supabase = getSupabaseClient();
     const supabaseClient = await (await import('@/lib/supabase/server')).createClient();
     const { data: { user }, error: authError } = await supabaseClient.auth.getUser();
     
